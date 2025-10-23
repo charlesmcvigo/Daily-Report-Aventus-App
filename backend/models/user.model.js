@@ -6,18 +6,18 @@ const userSchema = new mongoose.Schema(
             type: String,
             trim: true,
             required: true,
-            maxslength: 50,
+            maxlength: 30,
         },
         lastname:{
             type: String,
             trim: true,
             required: true,
-            maxslength: 50,
+            maxslength: 30,
         },
         middlename:{
             type: String,
             trim: true,
-            maxslength: 50,
+            maxlength: 30,
         },
         email: {
             type: String,

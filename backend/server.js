@@ -7,6 +7,7 @@ const cors = require('cors');
 
 //routes
 const userRoutes = require('./routes/user.routes.js');
+const dailyReportRoutes = require('./routes/daily_report.routes.js');
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(cors({
 
 
 app.use('/api', userRoutes);
+app.use('/api', dailyReportRoutes);
+
 
 
 const PORT = process.env.PORT;
