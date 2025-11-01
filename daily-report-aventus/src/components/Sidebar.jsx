@@ -1,35 +1,41 @@
 import React from "react";
 import { Home, FileEdit, List } from "lucide-react";
-import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ activeMenu, setActiveMenu }) => {
   return (
-    <div className="h-screen w-30 md:w-50 bg-green-600 flex flex-col gap-5 shadow-md text-white rounded-md">
+    <div className="h-screen w-30 md:w-50 bg-green-500 flex flex-col gap-5 shadow-md text-white rounded">
       <img
         className="h-25 w-auto object-contain m-4 drop-shadow-[0_0_10px_white]"
         src="/aventuslogoandname.png"
         alt="aventus logo and name"
       />
-      <Link
-        to="/"
-        className="btn btn-ghost justify-start gap-2 text-sm md:text-lg"
+
+      <button
+        onClick={() => setActiveMenu("dashboard")}
+        className={`btn btn-ghost justify-start gap-2 text-sm md:text-lg ${
+          activeMenu === "dashboard" && "bg-white text-green-700"
+        }`}
       >
         <Home size={18} /> Dashboard
-      </Link>
+      </button>
 
-      <Link
-        to="/create-report"
-        className="btn btn-ghost justify-start gap-2 md:text-lg"
+      <button
+        onClick={() => setActiveMenu("create-report")}
+        className={`btn btn-ghost justify-start gap-2 md:text-lg ${
+          activeMenu === "create-report" && "bg-white text-green-700"
+        }`}
       >
         <FileEdit size={18} /> Create Report
-      </Link>
+      </button>
 
-      <Link
-        to="/reports-history"
-        className="btn btn-ghost justify-start gap-2 md:text-lg"
+      <button
+        onClick={() => setActiveMenu("reports-history")}
+        className={`btn btn-ghost justify-start gap-2 md:text-lg ${
+          activeMenu === "reports-history" && "bg-white text-green-700"
+        }`}
       >
         <List size={18} /> Reports History
-      </Link>
+      </button>
     </div>
   );
 };
