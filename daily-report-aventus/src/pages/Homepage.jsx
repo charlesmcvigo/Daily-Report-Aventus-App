@@ -1,5 +1,5 @@
 import React from "react";
-import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -12,9 +12,11 @@ const Homepage = () => {
       <h1 className="font-mono px-5 text-3xl tracking-widest text-center">
         Daily Report
       </h1>
-      <button onClick={()=> toast.error("Di pa tapos! Atat yarn?")} className="btn btn-outline btn-success btn-wide">
-        Get started!
-      </button>
+      <Link to="/dashboard">
+        <button className="btn btn-outline btn-success btn-wide">
+          Get started!
+        </button>
+      </Link>
     </div>
   );
 };
